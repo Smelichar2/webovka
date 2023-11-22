@@ -6,6 +6,9 @@ import Carousel from "./components/carousels/carousel";
 import Skillset from "./components/skills/skillset";
 import Header from "./components/header/header";
 
+
+
+
 function App() {
   return (
 <div>
@@ -14,6 +17,8 @@ function App() {
   <Portfolio/>,
   <Carousel/>,
   <Skillset/>,
+
+
 </div>
 
   );
