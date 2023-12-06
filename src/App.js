@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import Portfolio from "./pages/portfolio";
-import Carousel from "./components/carousels/carousel";
-import Skillset from "./components/skills/skillset";
+
+
 import Header from "./components/header/header";
-import {DatePicker} from "antd";
+
 import React from 'react';
 import Background from "./components/background/background";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -30,9 +30,9 @@ const App = () => {
             {/* Přidejte zde ostatní komponenty */}
             <Header />
             <Portfolio />
-            <Carousel />
-            <Skillset />
-            <DatePicker />
+
+
+
           </Background>
         </div>
       </Router>

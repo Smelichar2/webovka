@@ -4,7 +4,7 @@ import './header.css'; // Importujte příslušný CSS soubor
 const Header = () => {
     return (
         <div classname="header">
-            <h1>Můj Web</h1>
+
         </div>
     );
 };
