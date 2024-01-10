@@ -1,0 +1,33 @@
+.purple-box{
+    width: 617px;
+    height: 166px;
+    flex-shrink: 0;
+    background: #140B29;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.purple-box-text{
+    color: #35FF69;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.skills{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+.skills-box{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
