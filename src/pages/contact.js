@@ -1,16 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const StyledForm = styled.form`
+const StyledForm = styled(motion.form)`
   background-color: #140B29;
   padding: 40px;
   border-radius: 10px;
   width: 800px;
   max-width: 800px;
-  margin: 0 auto;
+  margin-top: 200px;
+    margin-left: 500px;
+    
   display: flex;
   flex-direction: column;
-  height: 400px; /* Zvýšení výšky formuláře */
+  height: 400px;
+    
 `;
 
 const StyledLabel = styled.label`
@@ -28,7 +32,7 @@ const StyledInput = styled.input`
   border: none;
   border-radius: 5px;
   background-color: #0A0318;
-  height: 40px; /* Zvýšení výšky vstupního pole */
+  height: 40px;
 `;
 
 const StyledTextArea = styled.textarea`
@@ -38,7 +42,7 @@ const StyledTextArea = styled.textarea`
   margin-bottom: 16px;
   font-size: 16px;
   width: calc(100% - 20px);
-  height: 200px; /* Zvýšení výšky textového pole */
+  height: 200px;
   border: none;
   border-radius: 5px;
 `;
@@ -49,18 +53,46 @@ const StyledInputGroup = styled.div`
   align-items: baseline;
 `;
 
-const StyledTitle = styled.p`
+const StyledTitle = styled(motion.p)`
   font-size: 50px;
   margin-bottom: 20px;
   color: #fff;
   text-align: center;
 `;
 
+const StyledButton = styled.button`
+  background-color: #5F4BB6;
+  color: #fff;
+  padding: 10px 15px; /* Upraveno z 10px 5px */
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
 const ContactMe = () => {
+    const handleSendClick = () => {
+        // Tady můžeš přidat logiku pro odeslání zprávy na e-mail
+        // Například pomocí fetch() na serverový endpoint, který zprávu zpracuje.
+        // Pro účely tohoto příkladu je tato funkce prázdná.
+        console.log('Zpráva byla odeslána na simonskolni@seznam.cz');
+    };
+
     return (
         <div>
-            <StyledTitle>Contact me</StyledTitle>
-            <StyledForm>
+            <StyledTitle
+                initial= {{scale: 1, opacity: 0, y: 70}}
+                whileInView={{opacity: 1, y: 0}}
+                transition={{duration: 1}}
+                viewport={{once: false}}
+            >
+                Contact me
+            </StyledTitle>
+            <StyledForm
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
                 <StyledInputGroup>
                     <StyledLabel htmlFor="name">Name and Surname:</StyledLabel>
                     <StyledInput type="text" id="name" name="name" />
@@ -75,6 +107,8 @@ const ContactMe = () => {
                     <StyledLabel htmlFor="message">Message:</StyledLabel>
                     <StyledTextArea id="message" name="message" />
                 </StyledInputGroup>
+
+                <StyledButton onClick={handleSendClick}>Odeslat</StyledButton>
             </StyledForm>
         </div>
     );

@@ -1,107 +1,38 @@
+
 import React from 'react';
-import styled from 'styled-components';
-import "./about.css"
-
-const StyledDiv = styled.div`
-        color: #fff;
-        font-size: 18px;
-        text-align: left;
-        margin-left: 100px;
-        margin-bottom: 30px;
-`;
-const StyledHeading = styled.p`
-        font-size: 46px;
-        margin-bottom: 20px;
-        color: #fff;
-`;
-
-const StyledWhite = styled.span`
-        color: #fff;
-`;
-
-const StyledGreen = styled(StyledWhite)`
-        color: #35FF69;
-`;
-
-const StyledBlue = styled(StyledWhite)`
-        color: #5F4BB6;
-`;
-
-const StyledPink = styled(StyledWhite)`
-        color: #CF1259;
-`;
-
+import { motion } from 'framer-motion';
+import "./about.css";
 
 const About = () => {
-        return (
+    return (
+        <div className="section">
             <div className="skills">
                 <div className="skills-box">
-                    <div className="purple-box">WEB CODING</div>
-                    <div className="purple-box">DESIGN</div>
+                    <motion.div className="purple-box" whileHover={{ scale: 1.1 }}>
+                        <a>&lt;/WEB DESIGN&gt;</a>
+                    </motion.div>
+                    <motion.div className="purple-box" whileHover={{ scale: 1.1 }}>
+                        <a>&lt;/CODING&gt;</a>
+                    </motion.div>
                 </div>
-                <StyledDiv>
-                    <StyledHeading className="custom-heading">My name is<br /> Simon Melichar</StyledHeading>
-                    <StyledGreen>Lorem ipsum dolor </StyledGreen>
-                    <StyledWhite>sit amet,</StyledWhite>
+                <motion.div
+                    initial= {{scale: 1, opacity: 0, y: 70}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: 1}}
+                    viewport={{once: false}}
+                    className="skills-text"
+                >
+                    <h2>&lt;/My name is Simon Melichar&gt;</h2>
+                    <div className="skills-text-more">
+                        <p><p1>Lorem ipsum dolor</p1> sit amet, consectetuer <p3>adipiscing elit</p3>. Praesent in mauris eu tortor porttitor <p2>accumsan.</p2></p>
+                        <p><p1>Lorem ipsum dolor</p1> sit amet, consectetuer <p3>adipiscing elit</p3>. Praesent in mauris eu tortor porttitor <p2>accumsan.</p2> Praesent in mauris eu tortor porttitor <p2>accumsan.</p2></p>
+                        <p><p1>Lorem ipsum dolor</p1> sit amet, consectetuer <p3>adipiscing elit</p3>. Praesent in mauris eu tortor porttitor <p2>accumsan.</p2> Praesent in mauris eu tortor porttitor <p2>accumsan.</p2>Lorem ipsum dolor sit amet, consectetuer <p3>adipiscing elit</p3>.</p>
+                    </div>
 
-                    <StyledWhite>consectetuer </StyledWhite>
-                    <br />
-                    <StyledBlue>adipiscing elit.</StyledBlue>
-
-                    <StyledWhite>Praesent in mauris eu tortor</StyledWhite>
-                    <br />
-                    <StyledWhite>porttitor </StyledWhite>
-                    <StyledPink>accumsan.</StyledPink>
-                    <br />
-
-                    <br />
-                    <StyledGreen>Lorem ipsum dolor </StyledGreen>
-                    <StyledWhite>sit amet,</StyledWhite>
-                    <StyledWhite>consectetuer </StyledWhite>
-                    <br />
-                    <StyledBlue>adipiscing elit.</StyledBlue>
-                    <StyledWhite>Praesent in mauris eu tortor</StyledWhite>
-                    <br />
-                    <StyledWhite>porttitor </StyledWhite>
-                    <StyledPink>accumsan.</StyledPink>
-                    <StyledWhite>Praesent in mauris eu <StyledWhite>
-                            < br/>
-                    </StyledWhite>tortor</StyledWhite>
-
-                    <StyledWhite>porttitor </StyledWhite>
-                    <StyledPink>accumsan.</StyledPink>
-                    <br />
-
-                    <br />
-
-
-                    <StyledGreen>Lorem ipsum dolor </StyledGreen>
-                    <StyledWhite>sit amet,</StyledWhite>
-                    <StyledWhite>consectetuer </StyledWhite>
-                    <br />
-                    <StyledBlue>adipiscing elit.</StyledBlue>
-                    <StyledWhite>Praesent in mauris eu tortor</StyledWhite>
-                    <br />
-                    <StyledWhite>porttitor </StyledWhite>
-                    <StyledPink>accumsan.</StyledPink>
-                    <StyledWhite>Praesent in mauris eu <StyledWhite>
-                            < br/>
-                    </StyledWhite>tortor</StyledWhite>
-                    <StyledWhite>porttitor </StyledWhite>
-                    <StyledPink>accumsan.</StyledPink>
-                    <StyledGreen>Lorem ipsum dolor </StyledGreen>
-                    <br />
-                    <StyledWhite>sit amet, </StyledWhite>
-                    <StyledWhite>consectetuer </StyledWhite>
-
-                    <StyledBlue>adipiscing elit.</StyledBlue>
-
-                </StyledDiv>
+                </motion.div>
             </div>
-
-
-        );
+        </div>
+    );
 };
-
 
 export default About;

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import logo1 from '../fotky/logo1.png';
 import logo2 from '../fotky/logo2.png';
 import logo3 from '../fotky/logo3.png';
 import logo4 from '../fotky/logo4.png';
+import "./projects.css"
 
 const StyledPage = styled.div`
   color: #fff;
@@ -11,7 +13,6 @@ const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Nastavení výšky na 100% viewportu pro vyplnění celé stránky */
 `;
 
 const StyledTitle = styled.p`
@@ -20,24 +21,26 @@ const StyledTitle = styled.p`
   color: #fff;
 `;
 
-const StyledRectangle = styled.div`
+const StyledRectangle = styled(motion.div)`
   background-color: #140B29;
   padding: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  margin-top: 200px; /* Posunutí nahoru o 20px */
+  margin-top: 200px;
 `;
 
-const StyledLogo = styled.img`
+const StyledLogo = styled(motion.img)`
   max-width: 150px;
   max-height: 150px;
-  margin: 0 50px; /* Větší mezery mezi obrázky */
-  
+  margin: 0 50px;
+  cursor: pointer;
 `;
+
 const StyledWhite = styled.span`
   color: #fff;
+  font-size: 60px;
 `;
 
 const StyledGreen = styled(StyledWhite)`
@@ -46,25 +49,52 @@ const StyledGreen = styled(StyledWhite)`
 
 const StyledBlue = styled(StyledWhite)`
   color: #5F4BB6;
-  font-size: 40px
 `;
 
 const StyledPink = styled(StyledWhite)`
   color: #CF1259;
-  font-size: 40px
 `;
 
-
 const Projects = () => {
+    const logos = [logo1, logo2, logo3, logo4];
+    const [hoveredLogo, setHoveredLogo] = useState(null);
+
+    const handleLogoHover = (index) => {
+        setHoveredLogo(index);
+    };
+
+    const handleLogoLeave = () => {
+        setHoveredLogo(null);
+    };
+
     return (
+
         <StyledPage>
-            <StyledPink>Here are some </StyledPink>
-            <StyledBlue>of my Projects </StyledBlue>
-            <StyledRectangle>
-                <StyledLogo src={logo1} alt="logo1.png" />
-                <StyledLogo src={logo2} alt="logo2.png" />
-                <StyledLogo src={logo3} alt="logo3.png" />
-                <StyledLogo src={logo4} alt="logo4.png" />
+            <motion.div className="projects-info" initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+                <StyledPink style={{ fontSize: '60px' }}>&lt;/</StyledPink>
+                <div style={{ lineHeight: '1.2', textAlign: 'center' }}>
+                    <StyledBlue>Here </StyledBlue><StyledWhite>are some</StyledWhite><br />
+                    <StyledWhite>of my </StyledWhite>
+                    <StyledGreen>Projects</StyledGreen>
+                    <StyledPink style={{ fontSize: '60px' }}>&gt;</StyledPink>
+                </div>
+            </motion.div>
+
+            <StyledRectangle initial= {{scale: 1, opacity: 0, y: 70}}
+                             whileInView={{opacity: 1, y: 0}}
+                             transition={{duration: 1}}
+                             viewport={{once: false}}>
+                {logos.map((logo, index) => (
+                    <StyledLogo
+                        key={index}
+                        src={logo}
+                        alt={`logo${index + 1}.png`}
+                        onMouseEnter={() => handleLogoHover(index)}
+                        onMouseLeave={handleLogoLeave}
+                        whileHover={{ scale: 1.2 }}
+                        initial={{ scale: 1 }}
+                    />
+                ))}
             </StyledRectangle>
         </StyledPage>
     );

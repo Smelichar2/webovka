@@ -1,10 +1,16 @@
+body{
+    background-color: #0E0F19;
+}
+
 .purple-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 617px;
     height: 166px;
     flex-shrink: 0;
     background: #140B29;
     color: #FFF;
-    font-family: Inter;
     font-size: 48px;
     font-style: normal;
     font-weight: 400;
@@ -12,8 +18,21 @@
 }
 .purple-box-text{
     color: #35FF69;
-    font-family: Inter;
     font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.section{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section h1{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 40px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -23,11 +42,71 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    max-width: 1200px;
+    justify-content: space-between;
     width: 100%;
+    max-width: 1440px;
 }
 .skills-box{
     display: flex;
     flex-direction: column;
     gap: 25px;
+}
+
+.skills-text{
+    width: 550px;
+}
+
+.skills-text h2{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.skills-text-more{
+    width: 542px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.skills-text-more p{
+    width: 542px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.skills-text-more p1{
+    width: 542px;
+    color: #35FF69;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.skills-text-more p2{
+    width: 542px;
+    color: #CF1259;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.skills-text-more p3{
+    width: 542px;
+    color: #5F4BB6;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

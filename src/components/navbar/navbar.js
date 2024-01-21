@@ -7,6 +7,7 @@ const StyledNavbar = styled.nav`
   justify-content: flex-end; /* Zarovná na pravou stranu */
   background-color: #0E0F19;
   padding: 15px;
+
 `;
 const StyledWhite = styled.span`
   color: #fff;
